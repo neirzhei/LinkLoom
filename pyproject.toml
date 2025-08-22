@@ -1,0 +1,44 @@
+[build-system]
+requires = ["uv_build>=0.8.11,<0.9.0"]
+build-backend = "uv_build"
+
+[project]
+name = "LinkLoom"
+version = "0.0.2"
+authors = [
+  { name="Neirzhei", email="neirzhei@gmail.com" },
+]
+description = "LinkLoom is a command-line bookmark manager that allows you to save and find your bookmarks using natural language queries. Instead of searching by tags or keywords, you can search by meaning."
+readme = "README.md"
+requires-python = ">=3.9"
+keywords = ["Bookmark", "Organize", "Productivity", "Fast", "Vector Search"]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Developers",
+]
+license = "MIT"
+license-files = ["LICEN[CS]E*"]
+dependencies = [
+    "typer==0.16.0",
+    "torch",
+    "sentence-transformers==5.1.0",
+    "trafilatura",
+    "httpx",
+    "chromadb==1.0.20",
+
+]
+
+[project.urls]
+Repository = "https://github.com/neirzhei/LinkLoom"
+Issues = "https://github.com/neirzhei/LinkLoom/issues"
+
+[project.scripts]
+lloom = "linkloom.cli:app"
+
+[tool.uv.sources]
+torch = { index = "pytorch-cpu" }
+
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"

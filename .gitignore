@@ -1,0 +1,4 @@
+.venv
+bookmark.db
+chromadb
+src/linkloom/__pycache__
